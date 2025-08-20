@@ -22,8 +22,8 @@ public class FinishLine : MonoBehaviour
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
 
             float randomRangeX = Random.Range(-5f, 5f);
-            float randomRangeY = Random.Range(0f, 2f);
-            Vector3 randomOffset = new Vector3(randomRangeX, randomRangeY, 0);
+            //float randomRangeY = Random.Range(0f, 1f);
+            Vector3 randomOffset = new Vector3(randomRangeX, 0, 0);
 
             other.transform.position = finishpos.position + randomOffset;
             rb.linearVelocity = Vector2.zero;

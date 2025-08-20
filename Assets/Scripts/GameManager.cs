@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     private int posCamsIndex = 0;
     private int finishLinesIndex = 0;
 
+    public GameObject gatePrefab;
+
     void Start()
     {
         // Assurez-vous que le messageText est désactivé au début
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
         }
         restants.AddRange(GameObject.FindGameObjectsWithTag("Marble").ToList());
         Debug.Log(restants.Count);
+        StartCoroutine(Wait(3f));
+
     }
 
     public void BilleArrivee(GameObject bille)
@@ -61,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         if (arrivees.Count >= 1)
         {
-
+            int position = arrivees.Count + 1;
             GameObject derniereBille = restants[0];
             Debug.Log("Éliminé : " + derniereBille.name);
             arrivees.Remove(derniereBille);
@@ -70,8 +74,29 @@ public class GameManager : MonoBehaviour
             Destroy(finishLines[finishLinesIndex]);
             finishLinesIndex++;
 
+            string pos = "";
+            switch (position % 10)
+            {
+                case 1:
+                    pos = "st ";
+                    break;
+                case 2:
+                    pos = "nd ";
+                    break;
+                case 3:
+                    pos = "rd ";
+                    break;
+                default:
+                    pos = "th ";
+                    break;
+            }
+            if (position >= 11 && position <= 13)
+            {
+                pos = "th ";
+            }
+
             Time.timeScale = 0.2f;
-            eliminationText.text = derniereBille.name + " a été éliminée !";
+            eliminationText.text = position + pos + derniereBille.name + " was eliminated !";
             eliminationText.gameObject.SetActive(true);
 
             // Réinitialiser la liste pour le prochain round
@@ -83,7 +108,7 @@ public class GameManager : MonoBehaviour
     {
         // Réinitialiser le jeu pour le prochain round
         eliminationText.gameObject.SetActive(false);
-        mainCamera.transform.position = posCams[posCamsIndex].transform.position; 
+        mainCamera.transform.position = mainCamera.transform.position + new Vector3(0, -24, 0);//posCams[posCamsIndex].transform.position; 
         posCamsIndex++;
         Time.timeScale = 1f; // Réinitialiser le temps
 
@@ -107,6 +132,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(gates[gatesIndex]);
         gatesIndex++;
+    }
+
+    private IEnumerator Wait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gatePrefab);
+        Debug.Log("Gate destroyed after delay");
     }
 }
 
