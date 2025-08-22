@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     private List<GameObject> restants = new List<GameObject>();
 
     public List<GameObject> gates = new List<GameObject>();
-    public List<GameObject> posCams = new List<GameObject>();
     public List<GameObject> finishLines = new List<GameObject>();
 
 
@@ -20,7 +19,6 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera;
 
     private int gatesIndex = 0;
-    private int posCamsIndex = 0;
     private int finishLinesIndex = 0;
 
     public GameObject gatePrefab;
@@ -34,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
         restants.AddRange(GameObject.FindGameObjectsWithTag("Marble").ToList());
         Debug.Log(restants.Count);
-        StartCoroutine(Wait(3f));
+        StartCoroutine(Wait(2f));
 
     }
 
@@ -108,8 +106,7 @@ public class GameManager : MonoBehaviour
     {
         // Réinitialiser le jeu pour le prochain round
         eliminationText.gameObject.SetActive(false);
-        mainCamera.transform.position = mainCamera.transform.position + new Vector3(0, -24, 0);//posCams[posCamsIndex].transform.position; 
-        posCamsIndex++;
+        mainCamera.transform.position = mainCamera.transform.position + new Vector3(0, -24, 0);
         Time.timeScale = 1f; // Réinitialiser le temps
 
         StartCoroutine(WaitBeforeDestroy(1f));

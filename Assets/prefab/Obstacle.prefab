@@ -148,8 +148,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 0
-  TrapPos: {fileID: 0}
+  TrapPos:
+  - {fileID: 0}
   rotationSpeed: 500
   moveDistance: 2
   speed: 2
-  startPos: {x: 0, y: 0, z: 0}
+  timer: 0
+  pistonForce: 10
+  pistonAmplitude: 1
+  pistonDirection: {x: 1, y: 0}
