@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +26,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject gatePrefab;
 
+    private float currentSpeed = 1f;
+
+
+
     void Start()
     {
         // Assurez-vous que le messageText est désactivé au début
@@ -30,10 +37,24 @@ public class GameManager : MonoBehaviour
         {
             eliminationText.gameObject.SetActive(false);
         }
+        if(winText != null)
+        {
+            winText.gameObject.SetActive(false);
+        }
         restants.AddRange(GameObject.FindGameObjectsWithTag("Marble").ToList());
         Debug.Log(restants.Count);
         StartCoroutine(Wait(2f));
 
+    }
+
+    public void SetGameSpeed(float speed)
+    {
+        currentSpeed = speed;
+
+        Time.timeScale = currentSpeed;
+        Time.fixedDeltaTime = 0.02f / currentSpeed;
+
+        Debug.Log("Vitesse du jeu réglée sur x" + currentSpeed);
     }
 
     public void BilleArrivee(GameObject bille)
@@ -55,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitAndStartNextRound()
     {
-        yield return new WaitForSeconds(2f); // attendre 1 secondes
+        yield return new WaitForSeconds(1f); // attendre 1 secondes
         StartNextRound();
     }
 

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\marca\\Marble race\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|c:\\users\\marca\\marble race\\assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|C:\\Users\\marca\\Marble race\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|C:\\Users\\marca\\Marble race\\assets\\scripts\\marble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\marble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|C:\\Users\\marca\\Marble race\\assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|C:\\Users\\marca\\Marble race\\assets\\scripts\\finishline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\finishline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|c:\\users\\marca\\marble race\\assets\\scripts\\speedzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\speedzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|C:\\Users\\marca\\Marble race\\assets\\scripts\\marble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4F146E1-F8FA-E583-4A2D-BD0B05C97ADA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\marble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "SpeedZone.cs",
+              "DocumentMoniker": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\SpeedZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpeedZone.cs",
+              "ToolTip": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\SpeedZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpeedZone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T13:55:16.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Obstacle.cs",
               "DocumentMoniker": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\Obstacle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Obstacle.cs",
               "ToolTip": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\Obstacle.cs",
               "RelativeToolTip": "Assets\\Scripts\\Obstacle.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwEMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T19:25:57.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Marble.cs",
               "DocumentMoniker": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\Marble.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Marble.cs",
@@ -55,27 +72,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwFcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T17:10:31.411Z"
+              "WhenOpened": "2025-07-15T17:10:31.411Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "FinishLine.cs",
               "DocumentMoniker": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\FinishLine.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FinishLine.cs",
               "ToolTip": "C:\\Users\\marca\\Marble race\\Assets\\Scripts\\FinishLine.cs",
               "RelativeToolTip": "Assets\\Scripts\\FinishLine.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBkAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T17:47:54.079Z"
+              "WhenOpened": "2025-07-13T17:47:54.079Z",
+              "EditorCaption": ""
             }
           ]
         }

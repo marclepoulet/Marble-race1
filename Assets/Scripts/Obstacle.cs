@@ -9,25 +9,36 @@ public class Obstacle : MonoBehaviour
         MovingH,
         MovingV,
         Pendulum,
-        Piston
+        Piston,
+        Bumper
     }
 
     public ObstacleType obstacleType;
 
     public GameObject[] TrapPos;
 
+    public float timer;
+
+    [Header("Réglages Rotate")]
     public float rotationSpeed;
+
+    [Header("Réglages Moving")]
     public float moveDistance = 2f;
     public float speed = 2f;
-    public float timer;
+
+    
 
     private Quaternion initialRotation;
 
     private Vector3 startPos;
 
+    [Header("Réglages Piston")]
     public float pistonForce = 10f;       // force appliquée aux billes
     public float pistonAmplitude = 1f;    // amplitude visuelle
     public Vector2 pistonDirection = Vector2.right; // direction de poussée
+
+    [Header("Réglages bumper")]
+    public float bumperForce = 15f;
 
 
 
@@ -54,6 +65,7 @@ public class Obstacle : MonoBehaviour
             case ObstacleType.Trap:
                 OnTriggerEnter2D(GetComponent<Collider2D>());
                 this.GetComponent<SpriteRenderer>().color = Color.red; // Change color to indicate trap activation
+                this.GetComponent<Collider2D>().isTrigger = true; // Ensure collider is set to trigger
                 break;
             case ObstacleType.MovingH:
                 MovingObstacle();
@@ -68,6 +80,10 @@ public class Obstacle : MonoBehaviour
                 PistonObstacle();
                 this.GetComponent<SpriteRenderer>().color = Color.black; // Change color to indicate piston activation
                 break;
+            case ObstacleType.Bumper:
+                this.GetComponent<SpriteRenderer>().color = Color.yellow; // Change color to indicate bumper activation
+                break;
+
         }
     }
 
@@ -78,7 +94,7 @@ public class Obstacle : MonoBehaviour
    
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Marble"))
+        if (other.CompareTag("Marble") && obstacleType == ObstacleType.Trap)
         {
                 int randomIndex = Random.Range(0, TrapPos.Length);
                 Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
@@ -121,6 +137,20 @@ public class Obstacle : MonoBehaviour
             {
                 float forceValue = Mathf.Sin(timer * speed) * pistonForce;
                 rb.AddForce(pistonDirection.normalized * forceValue, ForceMode2D.Force);
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (obstacleType == ObstacleType.Bumper && collision.collider.CompareTag("Marble"))
+        {
+            Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
+            if (rb != null && collision.contacts.Length > 0)
+            {
+                // direction du rebond = normale du contact
+                Vector2 bounceDir = collision.contacts[0].normal;
+                rb.AddForce(bounceDir * bumperForce, ForceMode2D.Impulse);
             }
         }
     }
